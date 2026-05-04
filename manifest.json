@@ -1,0 +1,20 @@
+{
+  "short_name": "NutriSystem",
+  "name": "NutriSystem - Gestão Nutricional",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "assets/logo-icon-Dzq5kPID.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#10b981",
+  "background_color": "#f8fafc"
+}

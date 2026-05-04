@@ -1,0 +1,54 @@
+# Plano de Implementação: NutriApp Premium
+
+Este documento descreve a estratégia para criar uma plataforma de nutrição online robusta e moderna, similar ao DietSystem, otimizada para o ambiente da **Locaweb (Hospedagem Go Linux)**.
+
+## 1. Arquitetura Tecnológica
+Considerando as restrições da Hospedagem Go Linux (compartilhada), utilizaremos uma stack que garanta alta performance e facilidade de deploy:
+
+*   **Frontend**: React.js (Vite) - Para uma interface fluida, rápida e com "feeling" de aplicativo premium.
+*   **Backend**: PHP 8.x (Laravel ou Slim Framework) - Compatibilidade nativa e estável com a Locaweb.
+*   **Banco de Dados**: MySQL - Banco de dados robusto e já incluso no seu plano.
+*   **Estilização**: Vanilla CSS com variáveis modernas (Design System próprio) para garantir leveza e exclusividade visual.
+*   **Relatórios**: Geração de PDFs para os planos alimentares.
+
+## 2. Funcionalidades Principais (Fase 1)
+
+### 2.1 Dashboard do Nutricionista
+*   Visão geral de pacientes ativos.
+*   Próximas consultas.
+*   Atalhos rápidos para criação de dietas.
+
+### 2.2 Gestão de Pacientes
+*   Cadastro completo com anamnese digital.
+*   Histórico de consultas.
+*   Arquivamento de exames.
+
+### 2.3 Avaliação Antropométrica
+*   Cálculo automático de IMC, Massa Gorda/Magra.
+*   Protocolos de dobras cutâneas (Pollock, Faulkner, etc.).
+*   Gráficos de evolução para visualização rápida.
+
+### 2.4 Criador de Planos Alimentares
+*   Banco de alimentos integrado (Base TACO/IBGE).
+*   Cálculo de macronutrientes em tempo real (Carboidratos, Proteínas, Gorduras, Kcal).
+*   Modelos de dietas reutilizáveis.
+
+### 2.5 Portal do Paciente (WebApp)
+*   Acesso mobile-friendly ao cardápio.
+*   Lista de compras automática.
+*   Chat direto ou notificações de refeições.
+
+## 3. Design e Estética (Titanium Ultra)
+Para superar o DietSystem em visual:
+*   **Glassmorphism**: Efeitos de transparência e desfoque em painéis.
+*   **Micro-interações**: Feedback visual ao clicar e transições suaves entre telas.
+*   **Paleta de Cores**: Tons de verde esmeralda, cinzas profundos e branco "clean" para transmitir saúde e profissionalismo.
+*   **Tipografia**: Uso de fontes modernas como *Inter* ou *Outfit*.
+
+## 4. Cronograma e Progresso
+1.  **[CONCLUÍDO] Mockup Inicial**: Criação da interface do Dashboard e Listagem de Pacientes.
+2.  **[CONCLUÍDO] Estrutura de Banco de Dados**: Modelagem das tabelas de Pacientes, Alimentos e Dietas.
+3.  **[CONCLUÍDO] Antropometria**: Implementação de cálculos e gráficos de evolução.
+4.  **[EM ANDAMENTO] Criador de Planos**: Refinamento do banco de alimentos.
+5.  **[PRÓXIMO] Portal do Paciente**: Interface mobile para o cliente final.
+6.  **[PRÓXIMO] Geração de PDF**: Exportação de planos e avaliações.

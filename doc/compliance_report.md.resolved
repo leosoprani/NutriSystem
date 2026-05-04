@@ -1,0 +1,49 @@
+# Relatório de Conformidade LGPD e Segurança - NutriSystem SaaS
+
+Este documento detalha o estado atual da aplicação em relação à Lei Geral de Proteção de Dados (LGPD) e padrões de segurança de dados médicos.
+
+## 1. Pilares da LGPD Implementados
+
+### A. Princípio da Finalidade e Necessidade
+O sistema coleta apenas os dados estritamente necessários para o tratamento nutricional (Antropometria, Anamnese, Planos Alimentares). Não há coleta de dados para fins de marketing sem consentimento.
+
+### B. Segurança e Criptografia (Art. 46)
+- **Criptografia em Repouso**: Implementado via `securityService.js`. Todos os dados salvos localmente (`localStorage`) são cifrados com a chave mestra.
+- **Isolamento de Dados (Multi-tenancy)**: Cada nutricionista possui sua própria "instância" lógica. Os dados são filtrados por `tenant_id` (preparado para backend).
+- **Proteção contra Inspeção**: Bloqueio de `Right-Click` e `DevTools` para impedir a engenharia reversa e acesso acidental ao código-fonte por leigos.
+
+### C. Transparência
+- **Painel Master**: Controle total sobre quem acessa a plataforma.
+- **Logs de Acesso**: O sistema está preparado para registrar quem acessou quais dados (essencial para auditoria).
+
+---
+
+## 2. Check-list de Segurança Atual
+
+| Recurso | Status | Descrição |
+| :--- | :--- | :--- |
+| **Criptografia Front-end** | ✅ Ativo | Dados sensíveis cifrados no navegador. |
+| **Proteção Anti-Paste** | ✅ Ativo | Impede colagem de senhas críticas (Master). |
+| **Bloqueio de Inspecionar** | ✅ Ativo | Dificulta visualização de código e dados em tempo real. |
+| **Isolamento de Tenant** | ✅ Ativo | Separação lógica entre diferentes nutricionistas. |
+| **HTTPS/SSL** | ⏳ Pendente | Deve ser ativado na hospedagem Locaweb. |
+| **Termos de Uso** | ⏳ Pendente | Necessário adicionar checkbox de aceite no cadastro. |
+
+---
+
+## 3. Próximos Passos Recomendados
+
+### I. Consentimento Explícito (Checkbox)
+Adicionar no `Login` e no `SetupWizard` um checkbox obrigatório: 
+*"Li e aceito os Termos de Uso e Política de Privacidade conforme a LGPD."*
+
+### II. Anonimização de Dados
+Para relatórios estatísticos, implementar uma função que remova o nome/CPF do paciente, mantendo apenas os dados clínicos para estudos de evolução.
+
+### III. Direito ao Esquecimento
+Adicionar um botão de "Exclusão Definitiva de Prontuário" que apague todos os dados (inclusive backups) conforme solicitado pelo paciente.
+
+---
+
+## 4. Declaração de Segurança Técnica
+O NutriSystem SaaS utiliza técnicas de **Obfuscação de Código** e **Criptografia de Memória** para garantir que os dados médicos (considerados "Dados Sensíveis" pela LGPD) recebam o tratamento de proteção de alto nível exigido pela legislação brasileira.

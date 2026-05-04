@@ -1,0 +1,40 @@
+# Walkthrough: NutriSystem Premium
+
+Bem-vindo ao seu novo sistema de nutrição! Este guia explica como utilizar as funcionalidades que acabamos de construir.
+
+## 1. Dashboard e Gestão de Pacientes
+- **Visão Geral**: O Dashboard mostra estatísticas em tempo real.
+- **Seleção de Paciente**: Clique em qualquer linha da tabela para selecionar um paciente. Isso o levará automaticamente para o planejador de refeições com os dados desse paciente carregados.
+- **Novo Cadastro**: Use o botão "+ Novo Paciente" para abrir o formulário integrado ao banco de dados MySQL.
+
+## 2. Anamnese Nutricional
+- Localizada no menu lateral, permite preencher o perfil completo do paciente (Histórico, Hábitos e Estilo de Vida).
+- Design em abas para facilitar a navegação durante a consulta.
+
+## 3. Avaliação Antropométrica
+- Insira as medidas e dobras cutâneas para ver o cálculo automático de IMC e Composição Corporal.
+- **Gráficos**: Acompanhe visualmente a evolução do paciente através dos gráficos dinâmicos.
+
+## 4. Plano Alimentar e Exportação
+- Monte o cardápio diário com resumo de macronutrientes.
+- **PDF**: Clique em "Exportar PDF" para gerar um documento profissional pronto para enviar via WhatsApp ou E-mail.
+
+## 5. Personalização (Sua Marca)
+- Vá em **Configurações** para fazer upload da sua logomarca.
+- Uma vez salva, ela aparecerá automaticamente em todos os PDFs gerados pelo sistema.
+
+---
+
+## 🚀 Instruções de Deploy (Locaweb)
+
+O pacote de produção já foi gerado na pasta `dist`. Siga estes passos para colocar no ar:
+
+1.  **FTP**: Envie todo o conteúdo da pasta `dist` para dentro da pasta `public_html` do seu servidor Locaweb.
+2.  **Banco de Dados**:
+    - Crie um banco MySQL no painel Locaweb.
+    - Importe o arquivo `api/database.sql` usando o phpMyAdmin.
+3.  **Conexão**:
+    - Edite o arquivo `api/config.php` (dentro da pasta `public_html` no servidor).
+    - Insira o Host, Nome do Banco, Usuário e Senha fornecidos pela Locaweb.
+
+Seu sistema está pronto para ser o braço direito do seu consultório!
